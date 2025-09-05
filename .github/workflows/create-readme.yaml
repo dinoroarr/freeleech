@@ -1,0 +1,32 @@
+name: "Create README"
+
+on:
+  schedule:
+    - cron: "0 * * * *" # Every hour
+
+jobs:
+  create-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create JSON file
+        shell: bash
+        run: nix develop --command "just generate-json"
+
+      - name: Create README
+        shell: bash
+        run: nix develop --command "npm install && just generate-readme"
+
+      - name: Commit README
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update README.md - $(date +'%Y-%m-%d %H:%M:%S')"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "example@example.com"
+          branch: main
+          file_pattern: README.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

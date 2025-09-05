@@ -21,7 +21,6 @@
             pkl
             nodejs
             just
-            jq
           ];
         };
       }
