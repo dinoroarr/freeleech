@@ -31,7 +31,7 @@ A list of torrent trackers and their freeleech status.
 This list is automatically generated, updated every hour, last updated at ${new Date().toUTCString()} (UTC).
 
 | Tracker | Currently Freelech? | When Freelech? |
--|---------|---------------------|----------------|
+|---------|---------------------|----------------|
 `
 
   for (const freeleechInfo of sortedFreeleech) {

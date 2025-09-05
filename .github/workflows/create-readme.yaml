@@ -19,11 +19,11 @@ jobs:
 
       - name: Create JSON file
         shell: bash
-        run: nix develop --command "just generate-json"
+        run: nix develop --command bash -c "just generate-json"
 
       - name: Create README
         shell: bash
-        run: nix develop --command "npm install && just generate-readme"
+        run: nix develop --command bash -c "npm install && just generate-readme"
 
       - name: Commit README
         uses: stefanzweifel/git-auto-commit-action@v4
