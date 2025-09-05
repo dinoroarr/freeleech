@@ -26,12 +26,11 @@ jobs:
         run: nix develop --command bash -c "npm install && just generate-readme"
 
       - name: Commit README
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Update README.md - $(date +'%Y-%m-%d %H:%M:%S')"
-          commit_user_name: "github-actions[bot]"
-          commit_user_email: "example@example.com"
-          branch: main
-          file_pattern: README.md
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        shell: bash
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
+          git add README.md
+          git commit -m "Update README.md - $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          git push origin main
