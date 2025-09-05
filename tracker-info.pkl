@@ -10,8 +10,6 @@ class TrackerInfo {
 }
 
 class FIPermanent {
-    // Incrementing number, saved as a string
-    id: String
     // The short code of the tracker
     tracker: Tracker
 
@@ -19,8 +17,6 @@ class FIPermanent {
 }
 
 class FIRecurring {
-    // Incrementing number, saved as a string
-    id: String
     // The short code of the tracker
     tracker: Tracker
 
@@ -32,8 +28,6 @@ class FIRecurring {
 }
 
 class FIOneTime {
-    // Incrementing number, saved as a string
-    id: String
     // The short code of the tracker
     tracker: Tracker
 
@@ -65,18 +59,15 @@ trackers {
 
 freeleech {
     (FIPermanent) {
-        id = "1"
         tracker = "MTV"
         type = "permanent"
     }
     (FIRecurring) {
-        id = "2"
         tracker = "RHD"
         rrule = "every week on Saturday, Sunday"
         timeZone = "Europe/Berlin"
     }
     (FIOneTime) {
-        id = "3"
         tracker = "EMP"
         time = "2025-06-15T00:00:00Z/2025-06-17T00:00:00Z"
     }

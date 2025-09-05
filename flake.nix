@@ -20,6 +20,8 @@
           packages = [
             pkl
             nodejs
+            just
+            jq
           ];
         };
       }
