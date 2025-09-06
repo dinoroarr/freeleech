@@ -1,0 +1,13 @@
+@go.Package { name = "github.com/dinoroarr/tracker-info/gen/TrackerInfo" }
+module main.trackerInfo.gen.TrackerInfo
+
+import "package://pkg.pkl-lang.org/pkl-go/pkl.golang@0.11.1#/go.pkl"
+
+typealias Tracker = "RHD" | "MTV" | "EMP"
+
+// Full name of the tracker
+name: String
+// Three letter short code
+code: Tracker
+// Official domain
+domain: String

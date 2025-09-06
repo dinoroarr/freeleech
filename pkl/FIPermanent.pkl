@@ -1,0 +1,9 @@
+@go.Package { name = "github.com/dinoroarr/tracker-info/gen/FIPermanent" }
+module main.trackerInfo.gen.FIPermanent
+
+import "package://pkg.pkl-lang.org/pkl-go/pkl.golang@0.11.1#/go.pkl"
+
+// The short code of the tracker
+tracker: Tracker
+
+type: "permanent"

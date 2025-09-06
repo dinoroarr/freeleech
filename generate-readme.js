@@ -1,26 +1,50 @@
 import trackerInfo from "./tracker-info.json" with { type: "json" };
 import * as rrulePkg from "rrule"
 import * as DateFNS from "date-fns"
+import { TZDate } from "@date-fns/tz"
 import _ from "lodash";
 
 const RRule = rrulePkg.default.RRule;
 
 export function generateReadme() {
-  // Only add each tracker once
-  const addedTrackers = new Set();
-  const freeleech = [];
+  const infos = {};
 
-  for (const tracker of trackerInfo.freeleech.reverse()) {
-    if (addedTrackers.has(tracker.tracker)) {
-      continue;
-    }
-    addedTrackers.add(tracker.tracker);
+  // Sort by tracker code
+  for (const tracker of _.sortBy(_.values(trackerInfo.trackers), ["code"])) {
+    const freeleeches = _.sortBy(
+        trackerInfo.freeleech
+          .filter(f => f.tracker === tracker.code)
+          // Filter out all `one-time` freeleech that have already ended
+          .filter(isFreeleechAlreadyPassed)
+      // Sort by type
+      , [object => {
+        if (object.type === "permanent") {
+          return new Date(0); // Always first
+        }
 
-    freeleech.push(tracker);
+        if (object.type === "recurring") {
+          if (isFreeleechOngoing(object)) {
+            return getStartOfCurrentRecurring(object);
+          }
+
+          return getNextStartOfRecurring(object);
+        }
+
+        if (object.type === "one-time") {
+          if (isFreeleechOngoing(object)) {
+            return getStartOfOneTime(object);
+          }
+
+          return getNextStartOfOneTime(object);
+        }
+
+        throw new Error(`Unknown freeleech type: ${object.type}`);
+      }]);
+
+    // At this point, there should be at most one freeleech per tracker
+    infos[tracker.code] = freeleeches[0]
   }
 
-  // Sort by tracker name
-  const sortedFreeleech = _.orderBy(freeleech, ["tracker"])
 
   let output = "";
   output += `
@@ -34,8 +58,8 @@ This list is automatically generated, updated every hour, last updated at ${new 
 |---------|---------------------|----------------|
 `
 
-  for (const freeleechInfo of sortedFreeleech) {
-    const tracker = trackerInfo.trackers.find(t => t.code === freeleechInfo.tracker);
+  for (const [trackerCode, freeleechInfo] of Object.entries(infos)) {
+    const tracker = trackerInfo.trackers.find(t => t.code === trackerCode);
     const isFreeleech = getIsFreeleech(freeleechInfo);
     const whenFreeleech = getWhenFreeleech(freeleechInfo);
 
@@ -96,4 +120,104 @@ function getWhenFreeleech(tracker) {
       return `From ${new Date(start).toUTCString()} to ${new Date(end).toUTCString()} (UTC)`;
     }
   }
+}
+
+function isFreeleechAlreadyPassed(freeleechInfo) {
+  if (freeleechInfo.type !== "one-time") {
+    return true;
+  }
+
+  const [_, end] = freeleechInfo.time.split("/")
+  const timezone = freeleechInfo.timezone || "UTC";
+
+  const endDate = new TZDate(new Date(end), timezone);
+
+  return !DateFNS.isBefore(endDate, new Date());
+}
+
+function getStartOfCurrentRecurring(freeleechInfo) {
+  if (freeleechInfo.type !== "recurring") {
+    return null;
+  }
+
+  const timezone = freeleechInfo.timezone || "UTC";
+  const rruleConverted = RRule.fromText(freeleechInfo.rrule);
+  const rrule = new RRule({
+    ...rruleConverted.options,
+    tzid: timezone,
+  });
+
+  return rrule.before(new Date(), true)[0];
+}
+
+function getNextStartOfRecurring(freeleechInfo) {
+  if (freeleechInfo.type !== "recurring") {
+    return null;
+  }
+
+  const timezone = freeleechInfo.timezone || "UTC";
+  const rruleConverted = RRule.fromText(freeleechInfo.rrule);
+  const rrule = new RRule({
+    ...rruleConverted.options,
+    tzid: timezone,
+  });
+
+  return rrule.after(new Date(), true)[0];
+}
+
+function getStartOfOneTime(freeleechInfo) {
+  if (freeleechInfo.type !== "one-time") {
+    return null;
+  }
+
+  const [start, _] = freeleechInfo.time.split("/")
+  const timezone = freeleechInfo.timezone || "UTC";
+
+  return new TZDate(new Date(start), timezone);
+}
+
+function getNextStartOfOneTime(freeleechInfo) {
+  if (freeleechInfo.type !== "one-time") {
+    return null;
+  }
+
+  const [start, _] = freeleechInfo.time.split("/")
+  const timezone = freeleechInfo.timezone || "UTC";
+
+  return new TZDate(new Date(start), timezone);
+}
+
+function isFreeleechOngoing(freeleechInfo) {
+  if (freeleechInfo.type === "permanent") {
+    return true;
+  }
+
+  if (freeleechInfo.type === "recurring") {
+    const startOfHour = DateFNS.startOfHour(new Date());
+    const endOfHour = DateFNS.endOfHour(new Date());
+
+    const timezone = freeleechInfo.timezone || "UTC";
+    const rruleConverted = RRule.fromText(freeleechInfo.rrule);
+    const rrule = new RRule({
+      ...rruleConverted.options,
+      tzid: timezone,
+    });
+
+    return rrule.between(startOfHour, endOfHour).length > 0;
+  }
+
+  if (freeleechInfo.type === "one-time") {
+    const [start, end] = freeleechInfo.time.split("/")
+    const timezone = freeleechInfo.timezone || "UTC";
+
+    const startDate = new TZDate(new Date(start), timezone);
+    const endDate = new TZDate(new Date(end), timezone);
+
+    return DateFNS.isWithinInterval(new Date(), {
+      start: startDate,
+      end: endDate,
+    });
+  }
+
+  throw new Error(`Unknown freeleech type: ${freeleechInfo.type}`);
 }

@@ -19,7 +19,8 @@
         devShells.default = with pkgs; mkShell {
           packages = [
             pkl
-            nodejs
+            go
+            gopls
             just
           ];
         };

@@ -1,0 +1,13 @@
+@go.Package { name = "github.com/dinoroarr/tracker-info/gen/FIRecurring" }
+module main.trackerInfo.gen.FIRecurring
+
+import "package://pkg.pkl-lang.org/pkl-go/pkl.golang@0.11.1#/go.pkl"
+
+// The short code of the tracker
+tracker: Tracker
+
+type: "recurring"
+// RRule
+rrule: String
+// Timezone, optionally, by default UTC
+timeZone: String?
