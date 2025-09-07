@@ -11,5 +11,6 @@ tracker: String
 type: "recurring"
 // RRule
 rrule: String
+description: String
 // Timezone, optionally, by default UTC
 timeZone: String?

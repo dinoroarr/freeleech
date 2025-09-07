@@ -32,7 +32,7 @@ This list is automatically generated, updated every hour, last updated at ${new 
     const whenFreeleech = getNextFreeleechTime(freeleechInfo);
     const durationStr = tracker.minSeedingTime === undefined ? "Unknown" : tracker.minSeedingTime === 0 ? "No min. seeding" : humanizeDuration(tracker.minSeedingTime * 1000, {units: ["d", "h", "m", "s"]});
 
-    output += `| [${tracker.name}](${tracker.domain}) | ${isFreeleech ? "✅ Yes" : "❌ No"} | ${_.capitalize(whenFreeleech)} | ${durationStr} |\n`
+    output += `| [${tracker.name}](${tracker.domain}) | ${isFreeleech ? "✅ Yes" : "❌ No"} | ${whenFreeleech} | ${durationStr} |\n`
   }
 
   output += `
@@ -138,11 +138,12 @@ function checkIsCurrentlyFreeleech(info) {
       const startOfHour = DateFNS.startOfHour(new Date());
       const endOfHour = DateFNS.endOfHour(new Date());
 
-      const rruleConverted = RRule.fromText(info.rrule);
+      const rruleConverted = RRule.fromString(info.rrule);
       const rrule = new RRule({
         ...rruleConverted.options,
         dtstart: startOfHour,
         tzid: info.timeZone || "UTC",
+        interval: 50,
       });
 
       return rrule.between(startOfHour, endOfHour).length > 0;
@@ -166,7 +167,7 @@ function getNextFreeleechTime(info) {
       return "Permanent";
     }
     case "recurring": {
-      return info.rrule
+      return info.description
     }
     case "one-time": {
       const [start, end] = info.time.split("/")

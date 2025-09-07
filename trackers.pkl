@@ -406,7 +406,8 @@ freeleech {
     (FIRecurring) {
         type = "recurring"
         tracker = "RHD"
-        rrule = "every week on saturday, sunday"
+        rrule = "RRULE:FREQ=MINUTELY;BYDAY=SA,SU"
+        description = "Every Weekend; Saturday 00:00 - Sunday 23:59 UTC"
         timeZone = "Europe/Berlin"
     }
 
