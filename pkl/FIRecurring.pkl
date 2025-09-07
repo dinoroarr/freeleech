@@ -3,8 +3,10 @@ module main.trackerInfo.gen.FIRecurring
 
 import "package://pkg.pkl-lang.org/pkl-go/pkl.golang@0.11.1#/go.pkl"
 
+import "./TrackerInfo.pkl"
+
 // The short code of the tracker
-tracker: Tracker
+tracker: String
 
 type: "recurring"
 // RRule

@@ -12,6 +12,7 @@
   "dependencies": {
     "@date-fns/tz": "^1.4.1",
     "date-fns": "^4.1.0",
+    "humanize-duration": "^3.33.0",
     "lodash": "^4.17.21",
     "rrule": "^2.8.1"
   }

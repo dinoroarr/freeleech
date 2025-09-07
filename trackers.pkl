@@ -1,0 +1,425 @@
+amends "pkl/Trackers.pkl"
+
+import "pkl/TrackerInfo.pkl"
+import "pkl/FIPermanent.pkl"
+import "pkl/FIRecurring.pkl"
+import "pkl/FIOneTime.pkl"
+
+trackers {
+    (TrackerInfo) {
+        name = "ABTorrents"
+        code = "ABT"
+        domain = "https://abtorrents.xyz"
+        minSeedingTime = (60 * 60 * 24 * 14) // 14 days
+    }
+    (TrackerInfo) {
+        name = "Aither"
+        code = "ATH"
+        domain = "https://aither.cc"
+        minSeedingTime = (60 * 60 * 24 * 5) // 5 days
+    }
+    (TrackerInfo) {
+        name = "AnimeBytes"
+        code = "AB"
+        domain = "https://animebytes.tv"
+        // TODO: Add note since AnimeBytes uses a special formula
+        minSeedingTime = (60 * 60 * 5) // 5 hours
+    }
+    (TrackerInfo) {
+        name = "Anthelion"
+        code = "ANT"
+        domain = "https://anthelion.me"
+        minSeedingTime = (60 * 60 * 24 * 3) // 3 days
+    }
+    (TrackerInfo) {
+        name = "BakaBT"
+        code = "BBT"
+        domain = "https://bakabt.me"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "BitPorn"
+        code = "BTP"
+        domain = "https://bitporn.eu"
+        minSeedingTime = (60 * 60 * 24 * 2) // 2 days
+    }
+    (TrackerInfo) {
+        name = "BitTorrentFiles"
+        code = "BTF"
+        domain = "https://bittorrentfiles.me"
+        minSeedingTime = (60 * 60 * 60) // 60 hours
+    }
+    (TrackerInfo) {
+        name = "Blutopia"
+        code = "BLu"
+        domain = "https://blutopia.cc"
+        minSeedingTime = (60 * 60 * 24 * 7) // 7 days
+    }
+    (TrackerInfo) {
+        name = "BroadcasTheNet"
+        code = "BTN"
+        domain = "https://broadcasthe.net"
+        // TODO: 120 hours for seasons and 24 hours for episodes
+        minSeedingTime = (60 * 60 * 24) // 24 hours
+    }
+    (TrackerInfo) {
+        name = "BWTorrents"
+        code = "BwT"
+        domain = " https://bwtorrents.tv"
+        minSeedingTime = (60 * 60 * 24 * 3) // 3 days
+    }
+    (TrackerInfo) {
+        name = "Cathode-Ray.Tube"
+        code = "CRT"
+        domain = "https://cathode-ray.tube"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "CinemaZ"
+        code = "CZ"
+        domain = "https://cinemaz.to"
+        // TODO: Add note since CinemaZ uses a special formula
+        minSeedingTime = (60 * 60 * 24 * 3) // 3 days
+    }
+    (TrackerInfo) {
+        name = "Concertos"
+        code = "CON"
+        domain = "https://concertos.live"
+        minSeedingTime = (60 * 60 * 24 * 7) // 7 days
+    }
+    (TrackerInfo) {
+        name = "CrypticHaven"
+        code = "CH"
+        domain = "https://cryptichaven.org"
+        minSeedingTime = (60 * 60 * 24 * 14) // 14 days
+    }
+    (TrackerInfo) {
+        name = "DarkPeers"
+        code = "DP"
+        domain = "https://darkpeers.org"
+        minSeedingTime = (60 * 60 * 24 * 7) // 3 days
+    }
+    (TrackerInfo) {
+        name = "DigitalCoreClub"
+        code = "DCC"
+        domain = "https://digitalcore.club"
+        minSeedingTime = (60 * 60 * 24 * 5) // 5 days
+    }
+    (TrackerInfo) {
+        name = "Empornium"
+        code = "EMP"
+        domain = "https://empornium.is"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "ExoticaZ"
+        code = "EZ"
+        domain = "https://exoticaz.to"
+    }
+    (TrackerInfo) {
+        name = "FearNoPeer"
+        code = "FNP"
+        domain = "https://fearnopeer.com"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "FileList"
+        code = "FL"
+        domain = "https://filelist.io"
+        minSeedingTime = (60 * 60 * 24 * 2) // 2 days
+    }
+    (TrackerInfo) {
+        name = "FunFile"
+        code = "FF"
+        domain = "https://www.funfile.org"
+        minSeedingTime = (60 * 60 * 48) // 48 hours
+    }
+    (TrackerInfo) {
+        name = "GazelleGames"
+        code = "GGn"
+        domain = "https://gazellegames.net"
+        minSeedingTime = (60 * 60 * 80) // 80 hours
+    }
+    (TrackerInfo) {
+        name = "GreatPosterWall"
+        code = "GPW"
+        domain = "https://greatposterwall.com"
+        minSeedingTime = (60 * 60 * 24 * 2) // 2 days
+    }
+    (TrackerInfo) {
+        name = "Happy Fappy"
+        code = "HF"
+        domain = "https://www.happyfappy.org"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "hawke-uno"
+        code = "Hawke"
+        domain = "https://hawke.uno"
+        minSeedingTime = (60 * 60 * 24 * 5) // 5 days
+    }
+    (TrackerInfo) {
+        name = "HD-Space"
+        code = "HDS"
+        domain = "https://hd-space.org"
+        minSeedingTime = (60 * 60 * 24 * 2) // 2 days
+    }
+    (TrackerInfo) {
+        name = "HDBits"
+        code = "HDB"
+        domain = "https://hdbits.org"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "IPTorrents"
+        code = "IPT"
+        domain = "https://iptorrents.com"
+        minSeedingTime = (60 * 60 * 24 * 14) // 14 days
+    }
+    (TrackerInfo) {
+        name = "Jpopsuki"
+        code = "JPS"
+        domain = "https://jpopsuki.eu"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "Karagarga"
+        code = "KG"
+        domain = "https://karagarga.in"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "Lat-Team"
+        code = "LT"
+        domain = "https://lat-team.com"
+        minSeedingTime = (60 * 60 * 24 * 3) // 3 days
+    }
+    (TrackerInfo) {
+        name = "Last Digital Underground"
+        code = "LDU"
+        domain = "https://theldu.to"
+        minSeedingTime = (60 * 60 * 24 * 7) // 7 days
+    }
+    (TrackerInfo) {
+        name = "LST"
+        code = "LST"
+        domain = "https://lst.gg"
+        minSeedingTime = (60 * 60 * 24 * 3) // 3 days
+    }
+    (TrackerInfo) {
+        name = "Malayabits"
+        code = "MB"
+        domain = "https://malayabits.cc"
+        minSeedingTime = (60 * 60 * 24 * 1) // 1 days
+    }
+    (TrackerInfo) {
+        name = "Milkie"
+        code = "Milkie"
+        domain = "https://milkie.cc"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "MMA-torrents"
+        code = "MMA"
+        domain = "https://mma-torrents.com"
+    }
+    (TrackerInfo) {
+        name = "MoreThanTV"
+        code = "MTV"
+        domain = "https://morethantv.me"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "MyAnonaMouse"
+        code = "MAM"
+        domain = "https://myanonamouse.net"
+        minSeedingTime = (60 * 60 * 24 * 3) // 3 days
+    }
+    (TrackerInfo) {
+        name = "OldToons.world"
+        code = "OTW"
+        domain = "https://oldtoons.world"
+        minSeedingTime = (60 * 60 * 24 * 2) // 2 days
+    }
+    (TrackerInfo) {
+        name = "OnlyEncodes+"
+        code = "OE+"
+        domain = "https://onlyencodes.cc"
+        minSeedingTime = (60 * 60 * 48) // 48 hours
+    }
+    (TrackerInfo) {
+        name = "OpenCD"
+        code = "OCD"
+        domain = "https://open.cd/"
+        minSeedingTime = (60 * 60 * 36) // 36 hours
+    }
+    (TrackerInfo) {
+        name = "Orpheus"
+        code = "OPS"
+        domain = "https://orpheus.network"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "PassThePopcorn"
+        code = "PTP"
+        domain = "https://passthepopcorn.me"
+        minSeedingTime = (60 * 60 * 24 * 4) // 4 days
+    }
+    (TrackerInfo) {
+        name = "Phoenix Project"
+        code = "PP"
+        domain = "https://phoenixproject.app"
+        minSeedingTime = (60 * 60 * 24 * 3) // 3 days
+    }
+    (TrackerInfo) {
+        name = "RacingForMe"
+        code = "RFM"
+        domain = "https://www.racingfor.me"
+    }
+    (TrackerInfo) {
+        name = "Redacted"
+        code = "RED"
+        domain = "https://redacted.sh"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "ReelFliX"
+        code = "RFX"
+        domain = "https://reelflix.xyz"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "RetroFlix"
+        code = "RF"
+        domain = "https://retroflix.club"
+        minSeedingTime = (60 * 60 * 120) // 120 hours
+    }
+    (TrackerInfo) {
+        name = "RocketHD"
+        code = "RHD"
+        domain = "https://rocket-hd.cc"
+        minSeedingTime = (60 * 60 * 24 * 7) // 7 days
+    }
+    (TrackerInfo) {
+        name = "Secret Cinema"
+        code = "SC"
+        domain = "https://secret-cinema.pw"
+    }
+    (TrackerInfo) {
+        name = "seedpool"
+        code = "SP"
+        domain = "https://seedpool.org"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "SpeedApp"
+        code = "SpeedApp"
+        domain = "https://speedapp.io"
+        minSeedingTime = (60 * 60 * 48) // 48 hours
+    }
+    (TrackerInfo) {
+        name = "SportsCult"
+        code = "SC"
+        domain = "https://sportscult.org"
+        minSeedingTime = (60 * 60 * 24 * 3) // 3 days
+    }
+    (TrackerInfo) {
+        name = "SugoiMusic"
+        code = "SM"
+        domain = "https://sugoimusic.me"
+        minSeedingTime = (60 * 60 * 24 * 3) // 3 days
+    }
+    (TrackerInfo) {
+        name = "TheEmpire"
+        code = "TE"
+        domain = "https://theempire.click"
+        minSeedingTime = (60 * 60 * 24 * 1) // 1 day
+    }
+    (TrackerInfo) {
+        name = "TheGeeks"
+        code = "TG"
+        domain = "https://thegeeks.click"
+    }
+    (TrackerInfo) {
+        name = "TheVault"
+        code = "TV"
+        domain = "https://thevault.click"
+        minSeedingTime = (60 * 60 * 24 * 1) // 1 days
+    }
+    (TrackerInfo) {
+        name = "TorrentLeech"
+        code = "TL"
+        domain = "https://torrentleech.org"
+        minSeedingTime = (60 * 60 * 24 * 7) // 7 days
+    }
+    (TrackerInfo) {
+        name = "UHDBits"
+        code = "UHD"
+        domain = "https://uhdbits.org"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "Unwalled"
+        code = "UNW"
+        domain = "https://unwalled.cc"
+        minSeedingTime = (60 * 60 * 24 * 5) // 5 days
+    }
+    (TrackerInfo) {
+        name = "Upload.cx"
+        code = "UPL"
+        domain = "https://upload.cx"
+        minSeedingTime = (60 * 60 * 24 * 2) // 2 days
+    }
+    (TrackerInfo) {
+        name = "Utopia"
+        code = "UTO"
+        domain = "https://utp.to"
+        minSeedingTime = (60 * 60 * 24 * 3) // 3 days
+    }
+    (TrackerInfo) {
+        name = "YOiNKED"
+        code = "YOINK"
+        domain = "https://yoinked.org"
+        minSeedingTime = 0
+    }
+    (TrackerInfo) {
+        name = "YU-SCENE"
+        code = "YUSC"
+        domain = "https://yu-scene.net"
+        minSeedingTime = (60 * 60 * 24 * 3) // 3 days
+    }
+}
+
+freeleech {
+    (FIPermanent) {
+        type = "permanent"
+        tracker = "BTN"
+    }
+    (FIPermanent) {
+        type = "permanent"
+        tracker = "Milkie"
+    }
+    (FIPermanent) {
+        type = "permanent"
+        tracker = "MTV"
+    }
+    (FIRecurring) {
+        type = "recurring"
+        tracker = "RHD"
+        rrule = "every week on saturday, sunday"
+        timeZone = "Europe/Berlin"
+    }
+
+    // One offs
+    (FIOneTime) {
+        type = "one-time"
+        tracker = "EMP"
+        time = "2025-09-01T00:00:00/2025-09-03T00:00:00"
+    }
+    (FIOneTime) {
+        type = "one-time"
+        tracker = "MB"
+        time = "2025-09-02T18:00:00/2025-09-16T18:00:00"
+        timeZone = "MST"
+    }
+}

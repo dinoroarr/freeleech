@@ -9,5 +9,5 @@ import "./FIRecurring.pkl"
 import "./FIOneTime.pkl"
 
 
-trackers: TrackerInfo
-// freeleech: Listing<FIPermanent | FIRecurring | FIOneTime>
+trackers: Listing<TrackerInfo>
+freeleech: Listing<FIPermanent | FIRecurring | FIOneTime>

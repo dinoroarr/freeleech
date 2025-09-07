@@ -4,10 +4,16 @@ module main.trackerInfo.gen.TrackerInfo
 import "package://pkg.pkl-lang.org/pkl-go/pkl.golang@0.11.1#/go.pkl"
 
 typealias Tracker = "RHD" | "MTV" | "EMP"
+typealias Seconds = Number(isPositive)
 
-// Full name of the tracker
+/// Full name of the tracker
 name: String
-// Three letter short code
-code: Tracker
-// Official domain
+/// Three letter short code
+code: String
+/// Official domain
 domain: String
+/// Minimum seeding time
+/// If not specified, the tracker does not enforce a minimum seeding time
+minSeedingTime: Seconds?
+/// Whether double upload is set
+doubleUpload: Boolean?
