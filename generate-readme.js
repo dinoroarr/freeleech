@@ -75,6 +75,13 @@ function getFreeleechPerTracker() {
     return acc
   }, {})
 
+  // Remove permanent freeleech
+  infoPerTracker = Object.entries(infoPerTracker).reduce((acc, [tracker, infos]) => {
+    acc[tracker] = infos.filter(info => info.type !== "permanent")
+    return acc
+  }, {})
+
+
   // Make sure only one one-time freeleech per tracker
   infoPerTracker = Object.entries(infoPerTracker).reduce((acc, [tracker, infos]) => {
     const oneTimeInfos = infos.filter(info => info.type === "one-time")
