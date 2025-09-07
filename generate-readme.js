@@ -141,6 +141,7 @@ function checkIsCurrentlyFreeleech(info) {
       const rruleConverted = RRule.fromText(info.rrule);
       const rrule = new RRule({
         ...rruleConverted.options,
+        dtstart: startOfHour,
         tzid: info.timeZone || "UTC",
       });
 
