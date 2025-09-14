@@ -3,12 +3,13 @@
 
 A list of torrent trackers and their freeleech status.
 
-This list is automatically generated, updated every hour, last updated at Sun, 14 Sep 2025 08:36:54 GMT (UTC).
+This list is automatically generated, updated every hour, last updated at Sun, 14 Sep 2025 09:19:30 GMT (UTC).
 
 | Tracker | Currently Freelech? | When Freelech? | Min. Seeding Time |
 |---------|---------------------|----------------|-------------------|
 | [Malayabits](https://malayabits.cc) | ✅ Yes | From Wed, 03 Sep 2025 01:00:00 UTC to Wed, 17 Sep 2025 01:00:00 UTC | 1 day |
 | [RocketHD](https://rocket-hd.cc) | ✅ Yes | Every Weekend; Saturday 00:00 - Sunday 23:59 UTC | 7 days |
+| [seedpool](https://seedpool.org) | ✅ Yes | From Sat, 13 Sep 2025 18:00:00 UTC to Sat, 20 Sep 2025 00:00:00 UTC | No min. seeding |
 
 ## Notes
 
