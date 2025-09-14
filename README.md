@@ -19,3 +19,14 @@ This list is automatically generated, updated every hour, last updated at Sun, 1
 - We are not affiliated with any of the trackers listed here. Use at your own risk.
 - If you notice any inaccuracies, please open an issue or a pull request!
 
+## Contributing
+
+If you want to add a freeleech event, do the following:
+
+* Open [trackers.pkl](https://github.com/dinoroarr/freeleech/blob/main/trackers.pkl)
+* At the very end, add a `FIOneTime` instance. Take inspiration from the examples above
+* Open a PR
+
+You can also just open an issue and I will add the tracker info automatically for you.
+Please include the start and end of the freeleech event.
+
