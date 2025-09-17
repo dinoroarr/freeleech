@@ -1,6 +1,5 @@
 name: "One-Time Freeleech Event 🕒"
 description: Add a new one-time freeleech event
-labels: [one-time]
 body:
   - type: markdown
     attributes:
