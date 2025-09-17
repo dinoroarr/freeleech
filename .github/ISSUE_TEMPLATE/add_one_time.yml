@@ -1,4 +1,4 @@
-name: "One Time Freeleech Event 🕒"
+name: "One Freeleech Event 🕒"
 description: Add a new one-time freeleech event
 body:
   - type: markdown
@@ -8,7 +8,7 @@ body:
 
         Please fill out the fields below.
 
-        **Dates**: Please use the following format: `YYYY-MM-DD HH:MM:SS (TimeZone)`.
+        **Dates**: Please use the following format: `YYYY-MM-DD HH:MM:SS`.
         If no timezone is specified, UTC is assumed.
 
         Example: `2025-09-01 00:00:00`, `2025-09-01 02:00:00 GMT+2`, `2025-09-01 18:00:00 PST`
