@@ -43,6 +43,11 @@ This list is automatically generated, updated every hour, last updated at ${new 
 - The information in this list may not be accurate. Always check the tracker's website for the most up-to-date information.
 - We are not affiliated with any of the trackers listed here. Use at your own risk.
 - If you notice any inaccuracies, please open an issue or a pull request!
+
+## Roadmap
+
+- Add other events, such as double upload, advent calendar, etc.
+- Add a website where you can favorite trackers, and get a personalized RSS feed / JSON endpoint
 `
 
   console.log(output);

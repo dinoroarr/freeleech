@@ -22,8 +22,9 @@ trackers {
         name = "AnimeBytes"
         code = "AB"
         domain = "https://animebytes.tv"
-        // TODO: Add note since AnimeBytes uses a special formula
-        minSeedingTime = (60 * 60 * 5) // 5 hours
+        // HINT: AnimeBytes uses a special formula
+        // minimum time is 72 hours
+        minSeedingTime = (60 * 60 * 24 * 7 * 21) // 21 days
     }
     (TrackerInfo) {
         name = "Anthelion"
@@ -78,8 +79,9 @@ trackers {
         name = "CinemaZ"
         code = "CZ"
         domain = "https://cinemaz.to"
-        // TODO: Add note since CinemaZ uses a special formula
-        minSeedingTime = (60 * 60 * 24 * 3) // 3 days
+        // TODO: CinemaZ uses a special formula
+        // Minimum is 74 hours
+        minSeedingTime = (60 * 60 * 472) // 472 hours
     }
     (TrackerInfo) {
         name = "Concertos"
@@ -88,8 +90,8 @@ trackers {
         minSeedingTime = (60 * 60 * 24 * 7) // 7 days
     }
     (TrackerInfo) {
-        name = "CrypticHaven"
-        code = "CH"
+        name = "CrypticHaven Comedy Club"
+        code = "CCC"
         domain = "https://cryptichaven.org"
         minSeedingTime = (60 * 60 * 24 * 14) // 14 days
     }
@@ -97,7 +99,7 @@ trackers {
         name = "DarkPeers"
         code = "DP"
         domain = "https://darkpeers.org"
-        minSeedingTime = (60 * 60 * 24 * 7) // 3 days
+        minSeedingTime = (60 * 60 * 72) // 72 hours
     }
     (TrackerInfo) {
         name = "DigitalCoreClub"
@@ -409,6 +411,12 @@ freeleech {
         rrule = "RRULE:FREQ=MINUTELY;BYDAY=SA,SU"
         description = "Every Weekend; Saturday 00:00 - Sunday 23:59 UTC"
         timeZone = "Europe/Berlin"
+    }
+    (FIRecurring) {
+        type = "recurring"
+        tracker = "CCC"
+        rrule = "RRULE:FREQ=MINUTELY;BYMONTHDAY=1"
+        description = "Every Start of the Month for 24 Hours"
     }
 
     // One offs
