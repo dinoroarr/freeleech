@@ -46,8 +46,10 @@ This list is automatically generated, updated every hour, last updated at ${new 
 
 ## Roadmap
 
-- Add other events, such as double upload, advent calendar, etc.
-- Add a website where you can favorite trackers, and get a personalized RSS feed / JSON endpoint
+- [x] Automatically generate the README
+- [x] Add more trackers
+- [ ] Add other events, such as double upload, advent calendar, etc.
+- [ ] Add a website where you can favorite trackers, and get a personalized RSS feed / JSON endpoint
 `
 
   console.log(output);
