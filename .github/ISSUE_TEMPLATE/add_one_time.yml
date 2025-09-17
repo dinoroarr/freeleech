@@ -14,27 +14,27 @@ body:
       label: Tracker
       description: The name of the tracker (either long name or short code)
       placeholder: PTP
-      required: true
 
   - type: input
     attributes:
       label: Freeleech start
       description: When the freeleech event will start / started (If you don't know provide an estimation instead)
       placeholder: 2025.09.01 00:00:00 UTC
-      required: true
 
   - type: input
     attributes:
       label: Freeleech end
       description: When the freeleech event will end
       placeholder: 2025.09.10 00:00:00 UTC
-      required: true
 
-  - type: boolean
+  - type: dropdown
     attributes:
-      label: Double Upload?
-      description: Whether double upload will be set. If unsure, select false
-      default: false
+      label: Double upload?
+      description: Is double upload set for this event?
+      options:
+        - Yes
+        - No
+      default: No
 
   - type: textarea
     attributes:
