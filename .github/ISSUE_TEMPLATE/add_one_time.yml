@@ -32,9 +32,9 @@ body:
       label: Double upload?
       description: Is double upload set for this event?
       options:
-        - Yes
-        - No
-      default: No
+        - "No"
+        - "Yes"
+      default: 0
 
   - type: textarea
     attributes:
