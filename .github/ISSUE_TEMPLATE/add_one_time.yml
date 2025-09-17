@@ -28,7 +28,7 @@ body:
     attributes:
       label: Freeleech start
       description: When the freeleech event will start / started (If you don't know provide an estimation instead)
-      placeholder: 2025.09.01 00:00:00 UTC
+      placeholder: 2025-09-01 00:00:00
     validations:
       required: true
 
@@ -37,7 +37,7 @@ body:
     attributes:
       label: Freeleech end
       description: When the freeleech event will end
-      placeholder: 2025.09.10 00:00:00 UTC
+      placeholder: 2025-09-02 00:00:00
     validations:
       required: true
 
