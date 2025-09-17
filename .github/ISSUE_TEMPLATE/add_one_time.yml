@@ -7,27 +7,42 @@ body:
       value: |
         **Thank you for adding a freeleech event!**
 
-        Please fill out the fields below. For dates, please use the format YYYY.MM.DD. So September 1st 2025 would be 2025.09.01.
+        Please fill out the fields below.
+
+        **Dates**: Please use the following format: `YYYY-MM-DD HH:MM:SS [TimeZone]`.
+        If no timezone is specified, UTC is assumed.
+
+        Example: `2025-09-01 00:00:00`, `2025-09-01 02:00:00 GMT+2`, `2025-09-01 18:00:00 PST`
 
   - type: input
+    id: tracker_name
     attributes:
       label: Tracker
       description: The name of the tracker (either long name or short code)
       placeholder: PTP
+    validations:
+      required: true
 
   - type: input
+    id: event_start
     attributes:
       label: Freeleech start
       description: When the freeleech event will start / started (If you don't know provide an estimation instead)
       placeholder: 2025.09.01 00:00:00 UTC
+    validations:
+      required: true
 
   - type: input
+    id: event_stop
     attributes:
       label: Freeleech end
       description: When the freeleech event will end
       placeholder: 2025.09.10 00:00:00 UTC
+    validations:
+      required: true
 
   - type: dropdown
+    id: double_upload_enabled
     attributes:
       label: Double upload?
       description: Is double upload set for this event?
@@ -35,8 +50,11 @@ body:
         - "No"
         - "Yes"
       default: 0
+    validations:
+      required: true
 
   - type: textarea
+    id: extra_info
     attributes:
       label: Extra
       description: If there's anything else to know, feel free to add it here! Usually this is left empty.
