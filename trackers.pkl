@@ -428,4 +428,9 @@ freeleech {
         tracker = "SP"
         time = "2025-09-13T00:00:00/2025-09-20T00:00:00"
     }
+    (FIOneTime) {
+        type = "one-time"
+        tracker = "HDB"
+        time = "2025-09-21T00:00:00/2025-09-22T00:00:00"
+    }
 }
