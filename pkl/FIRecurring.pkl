@@ -14,3 +14,5 @@ rrule: String
 description: String
 // Timezone, optionally, by default UTC
 timeZone: String?
+// Whether double upload is set
+doubleUpload: Boolean?
