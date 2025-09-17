@@ -1,4 +1,4 @@
-name: "One-Time Freeleech Event 🕒"
+name: "One Time Freeleech Event 🕒"
 description: Add a new one-time freeleech event
 body:
   - type: markdown
