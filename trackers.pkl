@@ -311,7 +311,7 @@ trackers {
         name = "seedpool"
         code = "SP"
         domain = "https://seedpool.org"
-        minSeedingTime = 0
+        minSeedingTime = (60 * 60 * 24 * 10) // 10 days
     }
     (TrackerInfo) {
         name = "SpeedApp"
