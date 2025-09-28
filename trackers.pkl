@@ -458,4 +458,9 @@ freeleech {
         tracker = "YOINK"
         time = "2025-05-01T00:00:00/2025-10-30T20:00:00"
     }
+    (FIOneTime) {
+        type = "one-time"
+        tracker = "ANT"
+        time = "2025-09-28T20:06:00/2025-10-13T23:15:00"
+    }
 }
