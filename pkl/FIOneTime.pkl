@@ -15,3 +15,12 @@ time: String(matches(Regex("^([0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]
 timeZone: String?
 // Whether double upload is set
 doubleUpload: Boolean?
+// Why freeleech is happening
+// scheduled - Event scheduled normally
+// holiday - Holiday freeleech (e.g. Christmas, Easter)
+// donation-reached - Donation goal reached
+// user-goal-reached - User goal reached (e.g. user tipped freeleech pool, freeleech bought, etc.)
+// distraction - Distraction freeleech (e.g. domain change)
+// other - Other reason
+reason: ("scheduled" | "holiday" | "donation-reached" | "user-goal-reached" | "distraction" | "other")?
+
