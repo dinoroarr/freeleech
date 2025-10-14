@@ -477,4 +477,10 @@ freeleech {
         timeZone = "Europe/Berlin"
         reason = "donation-reached"
     }
+    (FIOneTime) {
+        type = "one-time"
+        tracker = "DP"
+        time = "2025-10-12T00:20:00/2025-10-19T00:20:00"
+        reason = "donation-reached"
+    }
 }
