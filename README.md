@@ -3,11 +3,12 @@
 
 A list of torrent trackers and their freeleech status.
 
-This list is automatically generated, updated every hour, last updated at Tue, 14 Oct 2025 16:24:36 GMT (UTC).
+This list is automatically generated, updated every hour, last updated at Tue, 14 Oct 2025 17:16:56 GMT (UTC).
 
 | Tracker | Currently Freelech? | When Freelech? | Min. Seeding Time |
 |---------|---------------------|----------------|-------------------|
 | [CrypticHaven Comedy Club](https://cryptichaven.org) | ❌ No | Every Start of the Month for 24 Hours | 14 days |
+| [DarkPeers](https://darkpeers.org) | ✅ Yes | From Sun, 12 Oct 2025 00:20:00 UTC to Sun, 19 Oct 2025 00:20:00 UTC | 3 days |
 | [RocketHD](https://rocket-hd.cc) | ❌ No | Every Weekend; Saturday 00:00 - Sunday 23:59 UTC | 7 days |
 | [YOiNKED](https://yoinked.org) | ✅ Yes | From Thu, 01 May 2025 00:00:00 UTC to Thu, 30 Oct 2025 20:00:00 UTC | No min. seeding |
 
