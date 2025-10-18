@@ -483,4 +483,10 @@ freeleech {
         time = "2025-10-12T00:20:00/2025-10-19T00:20:00"
         reason = "donation-reached"
     }
+    (FIOneTime) {
+        type = "one-time"
+        tracker = "ATH"
+        time = "2025-10-17T00:12:00/2025-11-01T00:00:00"
+        reason = "holiday"
+    }
 }
