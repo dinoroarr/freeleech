@@ -495,4 +495,11 @@ freeleech {
         time = "2025-10-26T00:20:00/2025-11-02T00:00:00"
         reason = "other"
     }
+    (FIOneTime) {
+        type = "one-time"
+        tracker = "AB"
+        time = "2025-11-13T11:00:00/2025-11-15T11:00:00"
+        reason = "other"
+        timeZone = "America/New_York"
+    }
 }
