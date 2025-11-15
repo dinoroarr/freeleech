@@ -3,11 +3,10 @@
 
 A list of torrent trackers and their freeleech status.
 
-This list is automatically generated, updated every hour, last updated at Sat, 15 Nov 2025 10:18:44 GMT (UTC).
+This list is automatically generated, updated every hour, last updated at Sat, 15 Nov 2025 11:15:06 GMT (UTC).
 
 | Tracker | Currently Freelech? | When Freelech? | Min. Seeding Time |
 |---------|---------------------|----------------|-------------------|
-| [AnimeBytes](https://animebytes.tv) | ✅ Yes | From Thu, 13 Nov 2025 16:00:00 UTC to Sat, 15 Nov 2025 16:00:00 UTC | 147 days |
 | [CrypticHaven Comedy Club](https://cryptichaven.org) | ❌ No | Every Start of the Month for 24 Hours | 14 days |
 | [RocketHD](https://rocket-hd.cc) | ✅ Yes | Every Weekend; Saturday 00:00 - Sunday 23:59 UTC | 7 days |
 
