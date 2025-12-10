@@ -505,7 +505,9 @@ freeleech {
     (FIOneTime) {
         type = "one-time"
         tracker = "PHX"
-        time = "2025-12-08T08:00:00/2026-01-08T08:00:00"
+        // Was unexpectedly paused, reason:
+        // "Sadly we have had to switch off the FL for a point in time, as we have a major Gremlin"
+        time = "2025-12-08T08:00:00/2026-12-10T07:34:00"
         reason = "holiday"
     }
 }
