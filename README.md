@@ -3,7 +3,7 @@
 
 A list of torrent trackers and their freeleech status.
 
-This list is automatically generated, updated every hour, last updated at Wed, 28 Jan 2026 15:33:13 GMT (UTC).
+This list is automatically generated, updated every hour, last updated at Wed, 28 Jan 2026 16:38:06 GMT (UTC).
 
 | Tracker | Currently Freelech? | When Freelech? | Min. Seeding Time |
 |---------|---------------------|----------------|-------------------|
